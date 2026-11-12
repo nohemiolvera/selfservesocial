@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog Templates · Self Serve Marketing (Google demo)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Roboto+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="blog/style.css">
+</head>
+<body>
+  <div class="wrap">
+  <header class="top">
+    <h1>Blog Templates <b>·</b> Google</h1>
+    <p class="sub">Open Graph and featured images for blog posts. A brand-agnostic demo: not affiliated with Google.</p>
+  </header>
+
+  <main class="layout">
+    <form class="panel" id="controls">
+      <fieldset>
+        <legend><span class="sect">Brand</span></legend>
+        <div class="segmented" data-group="brand">
+          <button type="button" data-value="cloud">Google Cloud</button>
+          <button type="button" data-value="google">Google</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="sect">Template</span></legend>
+        <div class="segmented" data-group="template">
+          <button type="button" data-value="illustration">Illustration</button>
+          <button type="button" data-value="texture">Texture</button>
+          <button type="button" data-value="customer">Customer Story</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="sect">Theme</span></legend>
+        <div class="segmented" data-group="theme">
+          <button type="button" data-value="light">Light</button>
+          <button type="button" data-value="dark">Dark</button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="sect">Content</span></legend>
+        <label>Text motion</label>
+        <div class="segmented" data-group="textMotion">
+          <button type="button" data-value="none">None</button>
+          <button type="button" data-value="fade">Fade in</button>
+          <button type="button" data-value="typing">Typing</button>
+        </div>
+        <label>Headline
+          <textarea name="headline" rows="3"></textarea>
+        </label>
+        <label>Category
+          <input name="category" type="text">
+        </label>
+        <label>Label
+          <input name="label" type="text">
+        </label>
+      </fieldset>
+
+      <fieldset data-show="illustration">
+        <legend><span class="sect">Illustration</span></legend>
+        <div class="illustrations" id="illustrations"></div>
+        <div class="segmented" data-group="motion">
+          <button type="button" data-value="draw">Draw</button>
+          <button type="button" data-value="still">Still</button>
+        </div>
+        <label data-motion="draw">Loop length <output class="loop-length-value"></output>
+          <input name="loopLength" type="range" min="10" max="60" step="2">
+        </label>
+        <label>Stroke width <output id="strokeValue"></output>
+          <input name="stroke" type="range" min="0.5" max="3" step="0.25">
+        </label>
+        <label>Dot spacing <output id="fieldSpacingValue"></output>
+          <input name="fieldSpacing" type="range" min="12" max="60" step="2">
+        </label>
+        <label>Custom SVG
+          <textarea name="customIllustration" rows="3" placeholder="Paste an SVG to replace the preset"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset data-show="texture">
+        <legend><span class="sect">Texture</span></legend>
+        <div class="segmented" data-group="texture">
+          <button type="button" data-value="settle">Settle</button>
+          <button type="button" data-value="warp">Warp</button>
+          <button type="button" data-value="flicker">Flicker</button>
+          <button type="button" data-value="ascii">ASCII</button>
+        </div>
+        <label>Loop length <output class="loop-length-value"></output>
+          <input name="loopLength" type="range" min="10" max="60" step="2">
+        </label>
+        <div class="illustrations ascii-icons" id="asciiIcons" data-texture="ascii"></div>
+        <label data-texture="ascii">Custom icon SVG
+          <textarea name="asciiSvg" rows="3" placeholder="Paste a simple, solid SVG icon"></textarea>
+        </label>
+        <label data-texture="settle">Density <output id="densityValue"></output>
+          <input name="density" type="range" min="1" max="4" step="1">
+        </label>
+      </fieldset>
+
+      <fieldset data-show="customer">
+        <legend><span class="sect">Customer logo</span></legend>
+        <label>Logo SVG
+          <textarea name="customerLogo" rows="3" placeholder="Paste the customer's SVG logo to replace the example"></textarea>
+        </label>
+        <label>Logo width <output id="customerWidthValue"></output>
+          <input name="customerWidth" type="range" min="100" max="320" step="2">
+        </label>
+      </fieldset>
+    </form>
+
+    <section class="stage" id="stage" aria-label="Previews"></section>
+  </main>
+  </div>
+
+  <script src="blog/assets.js"></script>
+  <script src="blog/app.js"></script>
+</body>
+</html>
